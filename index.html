@@ -125,25 +125,6 @@
 
 
 
-        
-.counter-container  {
-            position: fixed;
-            /* جعل الأيقونة ثابتة في مكانها */
-            top: 420px;
-            /* التحكم في المسافة من الأعلى */
-            right: 50px;
-            /* التحكم في المسافة من الجهة اليمنى */
-            margin-top: 10px;
-            /* التحكم في المسافة العمودية بين الأيقونة والحاوية */
-            margin-right: 10px;
-            /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
-            font-size: 25px;
-            /* حجم الأيقونة بالبكسل */
-            color: rgb(0, 7, 37);
-
-        }
-
-        
     </style>
 </head>
 
@@ -189,14 +170,6 @@
         </div>
 
 
-
-                    
-        <div class="counter-container">
-            <div class="counter-box">
-                <span id="counter">0</span>
-            </div>
-         <i class="fa-solid fa-user"></i>
-        </div>
 
 
 
@@ -506,25 +479,7 @@
 
 
 
-    
-    <script>
-
-        // تحقق مما إذا كان هناك عدد زوار محفوظ في Local Storage واسترجاعه
-            let visitorCount = localStorage.getItem("visitorCount");
-
-            // إذا لم يتم العثور على عدد زوار محفوظ، قم بتعيينه إلى القيمة الافتراضية 0
-            if (!visitorCount) {
-                visitorCount = 0;
-            }
-
-            // عرض العدد الحالي للزوار
-            document.getElementById("counter").textContent = visitorCount;
-
-            // زيادة العدد عند كل دخول للموقع
-            visitorCount++;
-            localStorage.setItem("visitorCount", visitorCount);
-
-    </script>
+  
 
 </body>
 
