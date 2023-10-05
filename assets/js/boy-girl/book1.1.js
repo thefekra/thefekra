@@ -3,7 +3,7 @@
 // الكود الخاص بإنشاء الصناديق في الدف الأيمن
 const booksDataRight = [
      { imgSrc: '../assets/imgs/img/6.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mEC9VdkK9Pmh5otYoDN-ApRKuGjvR5rK?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/7.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mMfrqUUeXbZTVsRdHXcLGWFcDfwhOxBw?usp=drive_link' },
+    { imgSrc: '../assets/imgs/7.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mMfrqUUeXbZTVsRdHXcLGWFcDfwhOxBw?usp=drive_link' },
     // يمكنك إضافة المزيد من العناصر هنا
 
     // يمكنك إضافة المزيد من العناصر هنا للدف الأيمن
