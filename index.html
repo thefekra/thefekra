@@ -88,7 +88,7 @@
         .cir i.fa-circle-info {
             position: fixed;
             /* جعل الأيقونة ثابتة في مكانها */
-            top: 590px;
+            top: 600px;
             /* التحكم في المسافة من الأعلى */
             right: 50px;
             /* التحكم في المسافة من الجهة اليمنى */
@@ -98,33 +98,40 @@
             /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
             font-size: 24px;
             /* حجم الأيقونة بالبكسل */
-            color: #ccc;
+            color: #0E2431;
 
         }
 
 
-        .cir::before {
-            content: "سياسة الموقع";
-            /* النص الذي تريد عرضه */
-            position: absolute;
-            /* تعيين النص على وضع موضعي */
-            top: 460px;
+       
+
+
+        .cirr {
+            position: relative;
+            /* تعيين العنصر الحاوي على وضع موضعي */
+        }
+
+        .cirr i.fa-headset {
+            position: fixed;
+            /* جعل الأيقونة ثابتة في مكانها */
+            top: 550px;
             /* التحكم في المسافة من الأعلى */
-            right: 18px;
+            right: 50px;
             /* التحكم في المسافة من الجهة اليمنى */
-            opacity: 0;
-            /* جعل النص غير مرئي في البداية */
-            transition: opacity 0.3s;
-            /* إضافة تأثير انتقالي للتلاشي */
+            margin-top: 10px;
+            /* التحكم في المسافة العمودية بين الأيقونة والحاوية */
+            margin-right: 10px;
+            /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
+            font-size: 24px;
+            /* حجم الأيقونة بالبكسل */
+            color: #0E2431;
+
         }
 
-        .cir:hover::before {
-            opacity: 1;
-            /* عرض النص عند تمرير الماوس فوق الزر */
-        }
 
+       
 
-
+        /* تنسيق العناصر */
     </style>
 </head>
 
@@ -169,11 +176,12 @@
             </a>
         </div>
 
+        <div class="cirr">
+            <a href="bot.html">
+                <i class="fa-solid fa-headset"></i>
+            </a>
+        </div>
 
-
-
-
-                    
         <div class="nav__toggle" id="nav-toggle">
             <i class='bx bx-menu'></i>
         </div>
@@ -296,13 +304,22 @@
                 <label class="team" for="team"> <b> اختر الفرقة: </b></label>
                 <div class="input-container">
                     <select id="team" required>
+                        <option value=" غير معروف"> غير معروف</option>
                         <option value="الفرقة الأولى">الفرقة الأولى</option>
                         <option value="الفرقة الثانية">الفرقة الثانية</option>
-                  <!--      <option value="الفرقة الثالثة">الفرقة الثالثة</option>--> 
+                        <option value="الفرقة الثالثة">الفرقة الثالثة</option>
                         <option value="الفرقة الرابعة">الفرقة الرابعة</option>
                     </select>
                 </div>
 
+                <label class="secton" for="section"> <b> اختر الشعبة: </b></label>
+                <div class="input-container">
+                    <select id="section" required>
+                        <option value=" غير معروف"> غير معروف</option>
+                        <option value="شعبة العلوم البيولوجية والجيولوجية">شعبة العلوم البيولوجية والجيولوجية</option>
+                        <option value="شعبة عامة">   شعبة عامة   ( مواد تربوي )</option>
+                    </select>
+                </div>
 
                 <label class="gender" for="gender"> <b> اختر المحافظة: </b></label>
                 <div class="input-container">
@@ -336,12 +353,14 @@
                     </select>
                 </div>
 
-                <button type="submit"> انشاء حساب </button>
+                <button type="submit" onclick="redirectToPage()"> انشاء حساب </button>
 
 
             </form>
         </div>
     </div>
+
+
 
 
 
@@ -380,18 +399,20 @@
             const email = document.getElementById('email').value;
             const gender = document.getElementById('gender').value;
             const team = document.getElementById('team').value;
+            const section = document.getElementById('section').value;
 
             const registrationTime = new Date();
-            saveUserData(name, email, gender, team, registrationTime);
+            saveUserData(name, email, gender, team, section, registrationTime);
 
-            redirectToPage(team);
+            redirectToPage(team, section);
         });
 
-        function saveUserData(name, email, gender, team, registrationTime) {
+        function saveUserData(name, email, gender, team, section, registrationTime) {
             localStorage.setItem('userName', name);
             localStorage.setItem('userEmail', email);
             localStorage.setItem('userGender', gender);
             localStorage.setItem('userTeam', team);
+            localStorage.setItem('userSection', section);
             localStorage.setItem('registrationTime', registrationTime);
 
             const selectedImage = document.getElementById('selectedImagePreview').src;
@@ -400,29 +421,43 @@
             updateLoginStatus(true);
         }
 
-        function redirectToPage(team) {
-            let pageURL = ''; // اضف روابط الصفحات هنا
-            switch (team) {
-                case 'الفرقة الأولى':
-                    pageURL = 'books/book1.html';
-                    break;
-                case 'الفرقة الثانية':
-                    pageURL = 'books/book2.html';
-                    break;
-                case 'الفرقة الثالثة':
-                    pageURL = 'books/book3.html';
-                    break;
-                case 'الفرقة الرابعة':
-                default:
-                    pageURL = 'books/book4.html';
+        function redirectToPage(team, section) {
+            // توجيه المستخدم إلى الصفحة المناسبة بناءً على القيم المحددة
+            if (team === 'الفرقة الأولى') {
+                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
+                    window.location.href = 'books/book1.html';
+                } else if (section === 'شعبة عامة') {
+                    window.location.href = 'boy-girl/book1.html';
+                }
+            } else if (team === 'الفرقة الثانية') {
+                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
+                    window.location.href = 'books/book2.html';
+                } else if (section === 'شعبة عامة') {
+                    window.location.href = 'boy-girl/book2.html';
+                }
+                // إضافة المزيد من الشروط هنا
+            } else if (team === 'الفرقة الثالثة') {
+                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
+                    window.location.href = 'books/book3.html';
+                } else if (section === 'شعبة عامة') {
+                    window.location.href = 'boy-girl/book3.html';
+                }
+                // إضافة المزيد من الشروط هنا
+            } else if (team === 'الفرقة الرابعة') {
+                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
+                    window.location.href = 'books/book1.html';
+                } else if (section === 'شعبة عامة') {
+                    window.location.href = 'boy-girl/book4.html';
+                }
+                // إضافة المزيد من الشروط هنا
             }
-            window.location.href = pageURL;
         }
 
         function updateLoginStatus(isLoggedIn) {
             localStorage.setItem('isLoggedIn', isLoggedIn);
         }
 
+    
     </script>
 
 
@@ -479,7 +514,6 @@
 
 
 
-  
 
 </body>
 
