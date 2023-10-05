@@ -8,7 +8,7 @@ const booksDataRight = [
     { imgSrc: '../assets/imgs/img/4.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mA1xMJ1X2nVNYhIsEfqmloLYrfQVSt3f?usp=drive_link' },
     { imgSrc: '../assets/imgs/5.jpg', downloadLink: 'https://drive.google.com/drive/folders/1lAGPuX5IEWq7KuWJ_88zA0IHneaUc6FF?usp=drive_link' },
     { imgSrc: '../assets/imgs/img/6.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mEC9VdkK9Pmh5otYoDN-ApRKuGjvR5rK?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/7.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mMfrqUUeXbZTVsRdHXcLGWFcDfwhOxBw?usp=drive_link' },
+    { imgSrc: '../assets/imgs/7.jpg', downloadLink: 'https://drive.google.com/drive/folders/1mMfrqUUeXbZTVsRdHXcLGWFcDfwhOxBw?usp=drive_link' },
     // يمكنك إضافة المزيد من العناصر هنا
 
     // يمكنك إضافة المزيد من العناصر هنا للدف الأيمن
