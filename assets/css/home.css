@@ -42,10 +42,19 @@
 
     }
 
+
     .team {
         margin-top: 15px;
         margin-left: 200px;
 
+    }
+    
+    #section {
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+        margin-top: 0px;
+    
     }
 
     #gender {
@@ -64,7 +73,8 @@
 
 
     .team,
-    .gender {
+    .gender,
+    .secton {
         font-size: 15px;
         margin-left: 230px;
 
