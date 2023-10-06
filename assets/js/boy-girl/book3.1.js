@@ -2,12 +2,12 @@
 
 // الكود الخاص بإنشاء الصناديق في الدف الأيمن
 const booksDataRight = [
-    { imgSrc: '../assets/imgs/img/34.jpg', downloadLink: 'https://drive.google.com/drive/folders/1cMKMg7nd7KdrtEveaKSy8LKfyPrqojt3?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/35.jpg', downloadLink: 'https://drive.google.com/drive/folders/1C9I6pmcXhp-7LX24IBtrPMeXcmdvGW4d?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/36.jpg', downloadLink: 'https://drive.google.com/drive/folders/1W2dNKyiSSs9CHxf1nvTNKCpSPGDZibaH?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/38.jpg', downloadLink: 'https://drive.google.com/drive/folders/137SHbxc2hENQRrnIC2NSlOz53B6L5UOn?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/39.jpg', downloadLink: 'https://drive.google.com/drive/folders/17u1TfA2AjFCaClXjW1aOfOqS_ecMOsjy?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/40.jpg', downloadLink: 'https://drive.google.com/drive/folders/1voP6knN0-CeH-Kq8BZeI_7emOYjIn8Ss?usp=drive_link' },
+    { imgSrc: '../assets/imgs/34.jpg', downloadLink: 'https://drive.google.com/drive/folders/1cMKMg7nd7KdrtEveaKSy8LKfyPrqojt3?usp=drive_link' },
+    { imgSrc: '../assets/imgs/35.jpg', downloadLink: 'https://drive.google.com/drive/folders/1C9I6pmcXhp-7LX24IBtrPMeXcmdvGW4d?usp=drive_link' },
+    { imgSrc: '../assets/imgs/36.jpg', downloadLink: 'https://drive.google.com/drive/folders/1W2dNKyiSSs9CHxf1nvTNKCpSPGDZibaH?usp=drive_link' },
+    { imgSrc: '../assets/imgs/38.jpg', downloadLink: 'https://drive.google.com/drive/folders/137SHbxc2hENQRrnIC2NSlOz53B6L5UOn?usp=drive_link' },
+    { imgSrc: '../assets/imgs/39.jpg', downloadLink: 'https://drive.google.com/drive/folders/17u1TfA2AjFCaClXjW1aOfOqS_ecMOsjy?usp=drive_link' },
+    { imgSrc: '../assets/imgs/40.jpg', downloadLink: 'https://drive.google.com/drive/folders/1voP6knN0-CeH-Kq8BZeI_7emOYjIn8Ss?usp=drive_link' },
 
     // يمكنك إضافة المزيد من العناصر هنا
 
