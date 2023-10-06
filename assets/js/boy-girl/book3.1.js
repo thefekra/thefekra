@@ -19,10 +19,10 @@ const booksDataRight = [
 const booksDataLeft = [
     { imgSrc: '../assets/imgs/img/43.jpg', downloadLink: 'https://drive.google.com/drive/folders/1REpGuMaxJSWpyfYm-IVYpXaM8Cj1SIwZ?usp=drive_link' },
     { imgSrc: '../assets/imgs/img/44.jpg', downloadLink: 'https://drive.google.com/drive/folders/1Z1dgHRf9vB5CTMd2xgPHqzlC4u_rEX1-?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/45.jpg', downloadLink: 'https://drive.google.com/drive/folders/124-E8aUiERtlp24KCLjs5hHAIjaeq6Y9?usp=drive_link' },
+    { imgSrc: '../assets/imgs/45.jpg', downloadLink: 'https://drive.google.com/drive/folders/124-E8aUiERtlp24KCLjs5hHAIjaeq6Y9?usp=drive_link' },
     { imgSrc: '../assets/imgs/img/46.jpg', downloadLink: 'https://drive.google.com/drive/folders/1RPNmG8yNZtyhfW_5qhU9ESEaVI3zvxPO?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/47.jpg', downloadLink: 'https://drive.google.com/drive/folders/1PBDUzf5IlPBMBrnS6s9oPPQ0XEu7VNrF?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/48.jpg', downloadLink: 'https://drive.google.com/drive/folders/1kSJtXcTm-EarPaUFISehTcFv3xd3EpXj?usp=drive_link' },
+    { imgSrc: '../assets/imgs/47.jpg', downloadLink: 'https://drive.google.com/drive/folders/1PBDUzf5IlPBMBrnS6s9oPPQ0XEu7VNrF?usp=drive_link' },
+    { imgSrc: '../assets/imgs/48.jpg', downloadLink: 'https://drive.google.com/drive/folders/1kSJtXcTm-EarPaUFISehTcFv3xd3EpXj?usp=drive_link' },
     { imgSrc: '../assets/imgs/img/49.jpg', downloadLink: 'https://drive.google.com/drive/folders/1i_pt0pfVLf7x5eX32H_iOARIxBwLAhR2?usp=drive_link' },
     { imgSrc: '../assets/imgs/img/50.jpg', downloadLink: 'https://drive.google.com/drive/folders/1HdcWnm8MVjnw3NAdPolSKHosJzENEsE1?usp=drive_link' },
 
