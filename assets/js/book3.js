@@ -2,15 +2,15 @@
 
 // الكود الخاص بإنشاء الصناديق في الدف الأيمن
 const booksDataRight = [
-    { imgSrc: '../assets/imgs/img/32.jpg', downloadLink: 'https://drive.google.com/drive/folders/1c0Nu2dL9af7Ta8gTy9UiBG66Kq4kw_xg?usp=sharing' },
-    { imgSrc: '../assets/imgs/img/33.jpg', downloadLink: 'https://drive.google.com/drive/folders/1UclHkhMc-0Xcq-LfZTic7imEMa8YeMcg?usp=sharing' },
-    { imgSrc: '../assets/imgs/img/34.jpg', downloadLink: 'https://drive.google.com/drive/folders/1cMKMg7nd7KdrtEveaKSy8LKfyPrqojt3?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/35.jpg', downloadLink: 'https://drive.google.com/drive/folders/1C9I6pmcXhp-7LX24IBtrPMeXcmdvGW4d?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/36.jpg', downloadLink: 'https://drive.google.com/drive/folders/1W2dNKyiSSs9CHxf1nvTNKCpSPGDZibaH?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/37.jpg', downloadLink: 'https://drive.google.com/drive/folders/1FAH9ZjG6aKe39kfWIa1HBzRnhTtWE148?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/38.jpg', downloadLink: 'https://drive.google.com/drive/folders/137SHbxc2hENQRrnIC2NSlOz53B6L5UOn?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/39.jpg', downloadLink: 'https://drive.google.com/drive/folders/17u1TfA2AjFCaClXjW1aOfOqS_ecMOsjy?usp=drive_link' },
-    { imgSrc: '../assets/imgs/img/40.jpg', downloadLink: 'https://drive.google.com/drive/folders/1voP6knN0-CeH-Kq8BZeI_7emOYjIn8Ss?usp=drive_link' },
+    { imgSrc: '../assets/imgs/32.jpg', downloadLink: 'https://drive.google.com/drive/folders/1c0Nu2dL9af7Ta8gTy9UiBG66Kq4kw_xg?usp=sharing' },
+    { imgSrc: '../assets/imgs/33.jpg', downloadLink: 'https://drive.google.com/drive/folders/1UclHkhMc-0Xcq-LfZTic7imEMa8YeMcg?usp=sharing' },
+    { imgSrc: '../assets/imgs/34.jpg', downloadLink: 'https://drive.google.com/drive/folders/1cMKMg7nd7KdrtEveaKSy8LKfyPrqojt3?usp=drive_link' },
+    { imgSrc: '../assets/imgs/35.jpg', downloadLink: 'https://drive.google.com/drive/folders/1C9I6pmcXhp-7LX24IBtrPMeXcmdvGW4d?usp=drive_link' },
+    { imgSrc: '../assets/imgs/36.jpg', downloadLink: 'https://drive.google.com/drive/folders/1W2dNKyiSSs9CHxf1nvTNKCpSPGDZibaH?usp=drive_link' },
+    { imgSrc: '../assets/imgs/37.jpg', downloadLink: 'https://drive.google.com/drive/folders/1FAH9ZjG6aKe39kfWIa1HBzRnhTtWE148?usp=drive_link' },
+    { imgSrc: '../assets/imgs/38.jpg', downloadLink: 'https://drive.google.com/drive/folders/137SHbxc2hENQRrnIC2NSlOz53B6L5UOn?usp=drive_link' },
+    { imgSrc: '../assets/imgs/39.jpg', downloadLink: 'https://drive.google.com/drive/folders/17u1TfA2AjFCaClXjW1aOfOqS_ecMOsjy?usp=drive_link' },
+    { imgSrc: '../assets/imgs/40.jpg', downloadLink: 'https://drive.google.com/drive/folders/1voP6knN0-CeH-Kq8BZeI_7emOYjIn8Ss?usp=drive_link' },
 
     // يمكنك إضافة المزيد من العناصر هنا
 
