@@ -1,0 +1,143 @@
+
+    
+    /* كود تسجيل الدخول */
+    
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+   
+
+    .container h1 {
+        margin-top: 90px;
+    }
+
+    .fekra h1 {
+        margin-top: auto;
+        font-size: 32px;
+    }
+
+    .nam,
+    .email {
+        font-size: 20px;
+        margin-left: 250px;
+        margin-bottom: 5px;
+    }
+
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    #team {
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+        margin-top: 0px;
+
+    }
+
+
+    .team {
+        margin-top: 15px;
+        margin-left: 200px;
+
+    }
+    
+    #section {
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+        margin-top: 0px;
+    
+    }
+
+    #gender {
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+
+
+    }
+
+    .gender {
+        margin-top: 1px;
+        margin-left: 200px;
+
+    }
+
+    #sex {
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+
+
+    }
+
+    .sex {
+        margin-top: 1px;
+        margin-left: 200px;
+
+    }
+
+
+    .team,
+    .gender,
+    .secton,
+    .sex {
+        font-size: 15px;
+        margin-left: 230px;
+
+    }
+
+    label,
+    select,
+    input {
+        margin: 6px 0;
+        border-radius: 10px;
+        width: 300px;
+        height: 30px;
+            direction: rtl;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #0E2431;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 300px;
+        height: 40px;
+
+    }
+
+/* إضافة تنسيق Flexbox لصندوقي الاختيار */
+.input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 300px;
+    direction: rtl;
+   
+}
+
+
+    /* تحديد عرض الـ label والـ select */
+    label,
+    select {
+        width: 45%;
+        /* يمكنك ضبط عرضهما بحسب احتياجاتك */
+    }
+
+
+
+
+
