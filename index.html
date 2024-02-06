@@ -409,43 +409,97 @@
             updateLoginStatus(true);
         }
 
-        function redirectToPage(team, section) {
+       
+        function redirectToPage() {
+            var teamSelect = document.getElementById("team");
+            var sectionSelect = document.getElementById("section");
+            var locationSelect = document.getElementById("gender");
+            var sexSelect = document.getElementById("sex");
+
+            var selectedTeam = teamSelect.value;
+            var selectedSection = sectionSelect.value;
+            var selectedLocation = locationSelect.value;
+            var selectedSex = sexSelect.value;
+
             // توجيه المستخدم إلى الصفحة المناسبة بناءً على القيم المحددة
-            if (team === 'الفرقة الأولى') {
-                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
-                    window.location.href = 'books/book1.html';
-                } else if (section === 'شعبة عامة') {
-                    window.location.href = 'boy-girl/book1.html';
-                }
-            } else if (team === 'الفرقة الثانية') {
-                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
-                    window.location.href = 'books/book2.html';
-                } else if (section === 'شعبة عامة') {
-                    window.location.href = 'boy-girl/book2.html';
-                }
-                // إضافة المزيد من الشروط هنا
-            } else if (team === 'الفرقة الثالثة') {
-                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
-                    window.location.href = 'books/book3.html';
-                } else if (section === 'شعبة عامة') {
-                    window.location.href = 'boy-girl/book3.html';
-                }
-                // إضافة المزيد من الشروط هنا
-            } else if (team === 'الفرقة الرابعة') {
-                if (section === 'شعبة العلوم البيولوجية والجيولوجية') {
-                    window.location.href = 'books/book1.html';
-                } else if (section === 'شعبة عامة') {
-                    window.location.href = 'boy-girl/book4.html';
-                }
-                // إضافة المزيد من الشروط هنا
+            if (selectedTeam === 'الفرقة الأولى' &&
+                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
+                selectedLocation === 'القاهرة' &&
+                selectedSex === 'بنين') {
+                window.location.href = 'book-boys-BIO-Cairo/book-boy1.html';
+            } else if (selectedTeam === 'الفرقة الأولى' &&
+                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
+                selectedLocation === 'اسيوط' &&
+                selectedSex === 'بنين') {
+                window.location.href = 'book-boys-BIO-Asyut/book-boy1.html';
             }
+             //else if (selectedTeam === 'الفرقة الأولى' &&
+                //selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
+                //selectedLocation === 'اسيوط' &&
+                //selectedSex === 'بنات') {
+               // window.location.href = 'books/book1-female-assiut.html';
+           // } else if (selectedTeam === 'الفرقة الأولى' &&
+               // selectedSection === 'شعبة تاريخ طبيعي' &&
+               // selectedLocation === 'القاهرة' &&
+               // selectedSex === 'بنين') {
+               // window.location.href = 'books/book1-female-assiut.html';
+           // } else if (selectedTeam === 'الفرقة الأولى' &&
+                //selectedSection === 'شعبة تاريخ طبيعي' &&
+                //selectedLocation === 'اسيوط' &&
+                //selectedSex === 'بنين') {
+                //window.location.href = 'books/book1-female-assiut.html';
+            //} else if (selectedTeam === 'الفرقة الأولى' &&
+               // selectedSection === 'شعبة تاريخ طبيعي' &&
+                //selectedLocation === 'اسيوط' &&
+                //selectedSex === 'بنات') {
+                //window.location.href = 'books/book1-female-assiut.html';
+           // } else if (selectedTeam === 'الفرقة الأولى' &&
+              //  selectedSection === 'شعبة عامة' &&
+               // selectedLocation === 'القاهرة' &&
+                //selectedSex === 'بنين') {
+                //window.location.href = 'books/book1-female-assiut.html';
+            //} else if (selectedTeam === 'الفرقة الأولى' &&
+               // selectedSection === 'شعبة عامة' &&
+               // selectedLocation === 'اسيوط' &&
+               // selectedSex === 'بنين') {
+               // window.location.href = 'books/book1-female-assiut.html';
+           // } else if (selectedTeam === 'الفرقة الأولى' &&
+               // selectedSection === 'شعبة عامة' &&
+               // selectedLocation === 'اسيوط' &&
+                // selectedSex === 'بنات') {
+                // window.location.href = 'books/book1-female-assiut.html';
+           // }
+            //-------------------------------الفرقة الثانية--------------------------------------
+            
+             else if (selectedTeam === 'الفرقة الثانية' &&
+               selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
+                selectedLocation === 'اسيوط' &&
+                selectedSex === 'بنين') {
+                window.location.href = 'book-boys-BIO-Asyut/book-boy2.html';
+            }
+            
+            
+            //-------------------------------الفرقة الثالثة--------------------------------------
+            else if (selectedTeam === 'الفرقة الثالثة' &&
+                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
+                selectedLocation === 'اسيوط' &&
+                selectedSex === 'بنين') {
+                window.location.href = 'book-boys-BIO-Asyut/book-boy3.html';
+            } 
+            //-------------------------------الفرقة الرابعة--------------------------------------
+            else if (selectedTeam === 'الفرقة الرابعة' &&
+                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
+                selectedLocation === 'اسيوط' &&
+                selectedSex === 'بنين') {
+                window.location.href = 'book-boys-BIO-Asyut/book-boy4.html';
+            } 
+            // يمكنك إضافة المزيد من الشروط هنا
         }
+
 
         function updateLoginStatus(isLoggedIn) {
             localStorage.setItem('isLoggedIn', isLoggedIn);
         }
-
-    
     </script>
 
 
