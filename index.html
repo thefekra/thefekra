@@ -1,562 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
+
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- =====BOX ICONS===== -->
+
     <meta property="og:url" content="https://thefekra.github.io/Beta-fekra/" />
+
     <meta property="og:site_name" content="Fekra" />
+
     <meta property="og:description"
+
         content="مرحبًا في Fekra: منصة توفير الكتب التعليمية. اكتشف مجموعتنا المتنوعة من الكتب التعليمية المجانية واستفد منها لتطوير معرفتك وتحقيق أهدافك التعليمية." />
-    <meta property="og:image" content="assets/imgs/logo (1).jpg" />
+
+    <meta property="og:image" content="../logo (1).jpg" />
+
     <meta property="og:image:type" content="image/jpg" />
+
     <meta property="og:image:width" content="300" />
+
     <title>Fekra</title>
-    <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/books.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/imgs/favicon.ico" type="image/x-icon">
+
+
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font+Name">
+
+
+
+    <!-- تضمين خطوط Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Poppins:wght@700&family=Roboto:wght@700&display=swap"
+
+        rel="stylesheet">
+
+
+
     <style>
-        .container {
+
+        body {
+
+            background-color: black;
+
             text-align: center;
-            margin: 50px auto;
-            width: 80%;
-            max-width: 350px;
-        }
 
+            height: 90vh;
 
-
-
-
-
-        .available-images {
-            display: none;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            margin-left: 40px;
-
-
-        }
-
-        .available-images.show {
             display: flex;
-        }
 
-        .available-image {
-            width: 30%;
-            border: 2px solid transparent;
-            margin-left: -70px;
-            border-radius: 20%;
-            /* جعل الحواف دائرية */
+            flex-direction: column;
 
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
+            justify-content: center;
 
-        .available-image:hover {
-            border-color: #007bff;
-        }
+            align-items: center;
 
-        .selected-image {
-            text-align: center;
-            margin-top: 10px;
         }
 
 
-        /* تغيير حجم وحواف الصورة المختارة */
-        #selectedImagePreview {
+
+        img {
+
             width: 100px;
+
             height: 100px;
-            object-fit: cover;
-            border-radius: 20%;
-            /* جعل الحواف دائرية */
-            border: 2px solid #007bff;
-            /* إضافة حدود */
+
+            border: 2px solid white;
+
+            border-radius: 10px;
+
+        }
+
+
+
+        .button-container {
+
+            display: flex;
+
+            flex-direction: column;
+
+            margin-top: 20px;
+
+        }
+
+
+
+        .button {
+
+            background-color: white;
+
+            color: black;
+
+            padding: 12px 70px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            font-size: 16px;
+
+            margin: 3px 0;
+
             cursor: pointer;
-        }
 
-
-        .cir {
-            position: relative;
-            /* تعيين العنصر الحاوي على وضع موضعي */
-        }
-
-        .cir i.fa-circle-info {
-            position: fixed;
-            /* جعل الأيقونة ثابتة في مكانها */
-            top: 600px;
-            /* التحكم في المسافة من الأعلى */
-            right: 50px;
-            /* التحكم في المسافة من الجهة اليمنى */
-            margin-top: 10px;
-            /* التحكم في المسافة العمودية بين الأيقونة والحاوية */
-            margin-right: 10px;
-            /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
-            font-size: 24px;
-            /* حجم الأيقونة بالبكسل */
-            color: #0E2431;
+            border-radius: 10px;
 
         }
 
 
-       
 
+        body {
 
-        .cirr {
-            position: relative;
-            /* تعيين العنصر الحاوي على وضع موضعي */
-        }
+            /* استخدم الأسماء الصحيحة للخطوط */
 
-        .cirr i.fa-headset {
-            position: fixed;
-            /* جعل الأيقونة ثابتة في مكانها */
-            top: 550px;
-            /* التحكم في المسافة من الأعلى */
-            right: 50px;
-            /* التحكم في المسافة من الجهة اليمنى */
-            margin-top: 10px;
-            /* التحكم في المسافة العمودية بين الأيقونة والحاوية */
-            margin-right: 10px;
-            /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
-            font-size: 24px;
-            /* حجم الأيقونة بالبكسل */
-            color: #0E2431;
+            font-family: 'Cairo', sans-serif;
+
+            font-weight: 600;
+
+            /* الوزن 600 للخط Cairo */
 
         }
 
 
-       
 
-        /* تنسيق العناصر */
+        /* لاحظ أنه يمكنك تحديد وزن الخط لكل عنصر على حدة إذا كنت بحاجة إلى ذلك */
+
+        .button {
+
+            font-weight: 700;
+
+            /* الوزن 700 للخط Poppins على الأزرار */
+
+        }
+
+
+
+        .font {
+
+            color: rgb(255, 0, 0);
+
+            font-size: 20px;
+
+        }
+
+
+
+        hr {
+
+            width: 100px;
+
+            /* العرض 25 بكسل */
+
+            height: 0;
+
+            /* الارتفاع 0 بكسل لإزالة الخط المرتفع */
+
+            border: 1px solid rgb(255, 255, 255);
+
+            /* تعيين الخط بحواف زاوية وسماكة 1 بكسل */
+
+
+
+        }
+
+
+
+        .but {
+
+            background-color: rgb(0, 0, 0);
+
+            color: rgb(0, 255, 0);
+
+            text-align: center;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            font-size: 16px;
+
+            margin: 50px 0;
+
+            cursor: pointer;
+
+            border-radius: 10px;
+
+            padding: 2px 6px;
+
+            margin-right: 250px;
+
+        }
+
+
+
+        .butt a:hover {
+
+            background-color: hwb(143 16% 11%);
+
+            color: #ffffff;
+
+        }
+
+
+
+
+
+
+
+
+
+        .butt {
+
+            display: flex;
+
+            flex-direction: column;
+
+            margin-top: 30px;
+
+        }
+
+
+
+
+
+        .fa-angle-left {
+
+            color: rgb(0, 255, 0);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .buot {
+
+            background-color: rgb(255, 0, 0);
+
+            color: rgb(255, 255, 255);
+
+            text-align: center;
+
+            padding: 0px 3px;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            font-size: 16px;
+
+            margin: 3px 0;
+
+            cursor: pointer;
+
+            border-radius: 10px;
+
+            margin-left: 250px;
+
+        }
+
+
+
+
+
+        .buott {
+
+            display: flex;
+
+            flex-direction: column;
+
+            margin-top: -35px;
+
+
+
+        }
+
+
+
+
+
+        .fa-angle-right {
+
+            color: rgb(0, 255, 0);
+
+        }
+
     </style>
+
 </head>
+
+
 
 <body>
 
 
-    <div class="tab-bar">
-        <div class="tab" onclick="switchTab('left')">
-            <span> انشاء حساب جديد </span>
-        </div>
-        <div class="tab active right" onclick="switchTab('right')">
-            <span>الصفحة الرئيسية</span>
-
-        </div>
-    </div>
-    <!------------- home------------->
-    <div id="content-right" class="tab-content active">
-        <div class="container">
-            <!-- محتوى الصفحة هنا -->
-            <!--===== HEADER =====-->
-            <header class="l-header">
-                <nav class="nav bd-grid">
-                    <div class="navbar">
-                        <div class="logo">
-                            <a href="#">
-                                <img src="assets/imgs/LOGO.png" alt="Logo">
-                            </a>
-                        </div>
-                        <div class="name">
-                            <a href="#" class="fekra">
-                                <h1>Fekra</h1>
-                            </a>
-                        </div>
-                    </div>
-
-        </div>
-
-
-        <div class="cir">
-            <a href="stop.html">
-                <i class="fa-solid fa-circle-info"></i>
-            </a>
-        </div>
-
-        <div class="cirr">
-            <a href="bot.html">
-                <i class="fa-solid fa-headset"></i>
-            </a>
-        </div>
-
-        <div class="nav__toggle" id="nav-toggle">
-            <i class='bx bx-menu'></i>
-        </div>
-        </nav>
-        </header>
-
-
-        <main class="l-main">
 
 
 
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
+    <div class="font">
 
-                    <h1 class="home__title">,مرحبا بك في<br>
-                        <span class="home__title-color">Fekra</span>
-                        <br>
-                        <h3> منصة تعليمية لكلية التربية
-                            <br>العلوم البيولوجية والجيولوجية
-                        </h3>
-                    </h1>
-
-                </div>
-
-            </section>
-
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">عن المنصة</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/imgs/about.jpg" alt="">
-                    </div>
-
-                    <div>
-                        <h2 class="about__subtitle">Fekra</h2>
-                        <p class="about__text">
-                        <h3>
-                            ستجد بها كل المواد الدراسية المتعلقة
-                            <u> بالعلوم البيولوجية والجيولوجية</u>
-                            لجميع الفرق الدراسية المختلفة.
-                            نحن نهدف إلى توفير تجربة تعليمية شاملة وشيقة لطلابنا،
-                            وذلك من خلال جمع كافة الموارد اللازمة في مكان واحد سهل الوصول.
-                        </h3>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- 
-            ===== CONTACT =====
-            <section class="contact section" id="contact">
-                <h2 class="section-title">إتصال</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="الاسم" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
-                    </form>
-                </div>
-            </section>
-        </main> -->
-
+        <h1> تم ايقاف المنصة مؤقتاََ</h1>
 
     </div>
-    </div>
-
-
-    <!-------------ملفات الترم الثاني------------->
-    <div id="content-left" class="tab-content">
-
-        <!-- ... محتوى التسجيل ... -->
-        <div class="navbar">
-            <div class="logo">
-                <a href="#">
-                    <img src="assets/imgs/LOGO.png" alt="Logo">
-                </a>
-            </div>
-            <div class="name">
-                <a href="#">
-                    <h1>Fekra</h1>
-                </a>
-            </div>
-        </div>
-
-        <div class="container">
-            <h1>أهلاً بك!</h1>
-            <form id="registrationForm">
-                <div class="selected-image">
-                    <img id="selectedImagePreview" src="assets/imgs/logo (3).jpg" alt="صورة البروفايل المختارة">
-                </div>
-
-
-                <div class="input-container">
-                    <div class="available-images">
-                        <img class="available-image" src="assets/imgs/pro/pro (1).jpg" alt="صورة 1">
-                        <img class="available-image" src="assets/imgs/pro/pro (2).jpg" alt="صورة 1">
-                        <img class="available-image" src="assets/imgs/pro/pro (7).jpg" alt="صورة 1">
-                        <img class="available-image" src="assets/imgs/pro/pro (6).jpg" alt="صورة 1">
-
-                        <!-- قائمة بالصور المتاحة هنا -->
-                    </div>
-                </div>
 
 
 
+    <img src="assets/imgs/5.png" alt="الصورة">
 
+    <div class="button-container">
 
-                <label class="nam" for="name">الاسم:</label>
-                <input type="text" id="name" required autofocus maxlength="25">
+        <a class="button" href="https://www.facebook.com/thefekra"> Facebook للتواصل</a>
 
-                <label class="email" for="email">الايميل:</label>
-                <input type="email" id="email" required>
+        <a class="button" href="https://t.me/thefekra"> Telegram</a>
 
+        <a class="button" href="https://whatsapp.com/channel/0029Va14HEQFSAt3e1cEbb16"> Whatsapp</a>
 
-                <label class="team" for="team"> <b> اختر الفرقة: </b></label>
-                <div class="input-container">
-                    <select id="team" required>
-                        <option value="غير ذالك">غير ذالك</option>
-                        <option value="الفرقة الأولى">الفرقة الأولى</option>
-                        <option value="الفرقة الثانية">الفرقة الثانية</option>
-                        <option value="الفرقة الثالثة">الفرقة الثالثة</option>
-                        <option value="الفرقة الرابعة">الفرقة الرابعة</option>
-                    </select>
-                </div>
+        <a class="button" href="https://www.youtube.com/@the_fekra"> YouTube</a>
 
-                <label class="secton" for="section"> <b> اختر الشعبة: </b></label>
-                <div class="input-container">
-                    <select id="section" required>
-                        <option value="غير ذالك">غير ذالك</option>
-                        <option value="شعبة العلوم البيولوجية والجيولوجية">شعبة العلوم البيولوجية والجيولوجية</option>
-                        <option value="شعبة تاريخ طبيعي"> شعبة تاريخ طبيعي</option>
-                        <option value="شعبة عامة">شعبة عامة</option>
-                    </select>
-                </div>
+        <a class="button" href="https://twitter.com/the_fekra?s=09"> Twitter</a>
 
-                <label class="gender" for="gender"> <b> اختر المحافظة: </b></label>
-                <div class="input-container">
-                    <select id="gender" required>
-                        <option value="غير ذالك">غير ذالك</option>
-                        <option value="القاهرة">القاهرة</option>
-                        <option value="اسيوط">اسيوط</option>
-                    </select>
-                </div>
-
-                <label class="sex" for="sex"> <b> اختر النوع: </b></label>
-                <div class="input-container">
-                    <select id="sex" required>
-                        <option value="غير ذالك">غير ذالك</option>
-                        <option value="بنين">بنين</option>
-                        <option value="بنات">بنات</option>
-                    </select>
-                </div>
-
-                <button type="submit" onclick="redirectToPage()"> انشاء حساب </button>
-
-
-            </form>
-        </div>
     </div>
 
 
 
-
-
-    <!--===== FOOTER =====-->
-    <footer class="footer">
-        <p class="footer__title">Fekra</p>
-        <div class="footer__social">
-            <!-- أيقونة فيسبوك من Font Awesome -->
-            <a href="https://www.facebook.com/thefekra" class="footer__icon" target="_blank"><i class="fab fa-facebook"
-                    style="color: #ffffff;"></i></a>
-
-            <!-- أيقونة تلجرام من Font Awesome -->
-            <a href="https://t.me/thefekra" class="footer__icon" target="_blank"><i class="fab fa-telegram"
-                    style="color: #ffffff;"></i></a>
-
-            <!-- أيقونة تويتر من Font Awesome -->
-            <a href="https://twitter.com/the_fekra?s=09" class="footer__icon" target="_blank"><i class="fab fa-twitter"
-                    style="color: #ffffff;"></i></a>
-        </div>
-        <p>&#169; 2023 Coding Fekra</p>
-    </footer>
-
-    <script src="assets/js/books.js"></script>
-
-    <script>
-        function selectImage(imageUrl) {
-            const selectedImagePreview = document.getElementById('selectedImagePreview');
-            selectedImagePreview.src = imageUrl;
-        }
-
-        const registrationForm = document.getElementById('registrationForm');
-
-        registrationForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const gender = document.getElementById('gender').value;
-            const team = document.getElementById('team').value;
-            const section = document.getElementById('section').value;
-
-            const registrationTime = new Date();
-            saveUserData(name, email, gender, team, section, registrationTime);
-
-            redirectToPage(team, section);
-        });
-
-        function saveUserData(name, email, gender, team, section, registrationTime) {
-            localStorage.setItem('userName', name);
-            localStorage.setItem('userEmail', email);
-            localStorage.setItem('userGender', gender);
-            localStorage.setItem('userTeam', team);
-            localStorage.setItem('userSection', section);
-            localStorage.setItem('registrationTime', registrationTime);
-
-            const selectedImage = document.getElementById('selectedImagePreview').src;
-            localStorage.setItem('userProfileImage', selectedImage);
-
-            updateLoginStatus(true);
-        }
-
-       
-        function redirectToPage() {
-            var teamSelect = document.getElementById("team");
-            var sectionSelect = document.getElementById("section");
-            var locationSelect = document.getElementById("gender");
-            var sexSelect = document.getElementById("sex");
-
-            var selectedTeam = teamSelect.value;
-            var selectedSection = sectionSelect.value;
-            var selectedLocation = locationSelect.value;
-            var selectedSex = sexSelect.value;
-
-            // توجيه المستخدم إلى الصفحة المناسبة بناءً على القيم المحددة
-            if (selectedTeam === 'الفرقة الأولى' &&
-                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
-                selectedLocation === 'القاهرة' &&
-                selectedSex === 'بنين') {
-                window.location.href = 'book-boys-BIO-Cairo/book-boy1.html';
-            } else if (selectedTeam === 'الفرقة الأولى' &&
-                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
-                selectedLocation === 'اسيوط' &&
-                selectedSex === 'بنين') {
-                window.location.href = 'book-boys-BIO-Asyut/book-boy1.html';
-            }
-             //else if (selectedTeam === 'الفرقة الأولى' &&
-                //selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
-                //selectedLocation === 'اسيوط' &&
-                //selectedSex === 'بنات') {
-               // window.location.href = 'books/book1-female-assiut.html';
-           // } else if (selectedTeam === 'الفرقة الأولى' &&
-               // selectedSection === 'شعبة تاريخ طبيعي' &&
-               // selectedLocation === 'القاهرة' &&
-               // selectedSex === 'بنين') {
-               // window.location.href = 'books/book1-female-assiut.html';
-           // } else if (selectedTeam === 'الفرقة الأولى' &&
-                //selectedSection === 'شعبة تاريخ طبيعي' &&
-                //selectedLocation === 'اسيوط' &&
-                //selectedSex === 'بنين') {
-                //window.location.href = 'books/book1-female-assiut.html';
-            //} else if (selectedTeam === 'الفرقة الأولى' &&
-               // selectedSection === 'شعبة تاريخ طبيعي' &&
-                //selectedLocation === 'اسيوط' &&
-                //selectedSex === 'بنات') {
-                //window.location.href = 'books/book1-female-assiut.html';
-           // } else if (selectedTeam === 'الفرقة الأولى' &&
-              //  selectedSection === 'شعبة عامة' &&
-               // selectedLocation === 'القاهرة' &&
-                //selectedSex === 'بنين') {
-                //window.location.href = 'books/book1-female-assiut.html';
-            //} else if (selectedTeam === 'الفرقة الأولى' &&
-               // selectedSection === 'شعبة عامة' &&
-               // selectedLocation === 'اسيوط' &&
-               // selectedSex === 'بنين') {
-               // window.location.href = 'books/book1-female-assiut.html';
-           // } else if (selectedTeam === 'الفرقة الأولى' &&
-               // selectedSection === 'شعبة عامة' &&
-               // selectedLocation === 'اسيوط' &&
-                // selectedSex === 'بنات') {
-                // window.location.href = 'books/book1-female-assiut.html';
-           // }
-            //-------------------------------الفرقة الثانية--------------------------------------
-            
-             else if (selectedTeam === 'الفرقة الثانية' &&
-               selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
-                selectedLocation === 'اسيوط' &&
-                selectedSex === 'بنين') {
-                window.location.href = 'book-boys-BIO-Asyut/book-boy2.html';
-            }
-            
-            
-            //-------------------------------الفرقة الثالثة--------------------------------------
-            else if (selectedTeam === 'الفرقة الثالثة' &&
-                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
-                selectedLocation === 'اسيوط' &&
-                selectedSex === 'بنين') {
-                window.location.href = 'book-boys-BIO-Asyut/book-boy3.html';
-            } 
-            //-------------------------------الفرقة الرابعة--------------------------------------
-            else if (selectedTeam === 'الفرقة الرابعة' &&
-                selectedSection === 'شعبة العلوم البيولوجية والجيولوجية' &&
-                selectedLocation === 'اسيوط' &&
-                selectedSex === 'بنين') {
-                window.location.href = 'book-boys-BIO-Asyut/book-boy4.html';
-            } 
-            // يمكنك إضافة المزيد من الشروط هنا
-        }
-
-
-        function updateLoginStatus(isLoggedIn) {
-            localStorage.setItem('isLoggedIn', isLoggedIn);
-        }
-    </script>
-
-
-    <script>
-        const availableImagesContainer = document.querySelector('.available-images');
-        const selectedImagePreview = document.getElementById('selectedImagePreview');
-        const availableImages = document.querySelectorAll('.available-image');
-
-        selectedImagePreview.addEventListener('click', function () {
-            availableImagesContainer.classList.toggle('show');
-        });
-
-        availableImages.forEach(image => {
-            image.addEventListener('click', function () {
-                const imageUrl = this.getAttribute('src');
-                selectedImagePreview.src = imageUrl;
-                availableImagesContainer.classList.remove('show');
-            });
-        });
-    </script>
-
-
-    <!--===== SCROLL REVEAL =====-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-
-    <script>
-
-        // افحص ما إذا تم الموافقة من قبل المستخدم
-        const hasAgreed = localStorage.getItem('agreed');
-
-        // إذا لم يتم الموافقة بعد، عرض الشروط وتنفيذها
-        if (!hasAgreed) {
-            // عرض الشروط هنا (ربما باستخدام alert أو عنصر HTML خاص)
-            const agree = confirm("هل توافق على الشروط والأحكام؟");
-            if (agree) {
-                // تعيين الموافقة في Local Storage لكي لا تظهر مرة أخرى
-                localStorage.setItem('agreed', 'true');
-            } else {
-                // هنا يمكنك تنفيذ السلوك الذي تريده إذا لم يوافق المستخدم
-                alert("يجب الموافقة على الشروط للاستمرار");
-                // يمكن توجيه المستخدم لصفحة أخرى أو تقييد الوصول إلى المحتوى
-            }
-        }
-
-
-
-
-
-
-    </script>
-
-
-
-
-
+    <hr>
 
 </body>
 
-</html>
+
+
+    </html>
