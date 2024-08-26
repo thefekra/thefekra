@@ -1,0 +1,83 @@
+.container {
+    /* محاذاة النصوص داخل الحاوية إلى اليسار */
+    margin: 50px auto;
+    width: 80%;
+    max-width: 350px;
+
+    /* القواعد القديمة: */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    /* محاذاة النصوص داخل النموذج إلى اليسار */
+}
+
+h2 {
+    text-align: center;
+    /* محاذاة العنوان في الوسط */
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    text-align: right;
+    /* محاذاة النص داخل الحقول إلى اليسار */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    /* ضمان عرض كامل */
+    box-sizing: border-box;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    
+    /* محاذاة النص داخل التسمية إلى اليسار */
+}
+
+
+.show-password {
+    position:sticky;
+    right: 380px; /* تعديل موقع الأيقونة داخل الحقل */
+    transform: translateY(50%);
+    cursor: pointer;
+}
+
+
+button {
+    padding: 10px;
+    width: 100px;
+    background-color: #0f1d2c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #08111b;
+}
+
+p {
+    text-align: right;
+    /* محاذاة الفقرات إلى اليسار */
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

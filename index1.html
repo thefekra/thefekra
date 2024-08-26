@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ارسال المشكلة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 330px;
+            margin: 25px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #000000;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333333;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #555555;
+        }
+
+        input[type="email"]::placeholder {
+            color: #999999;
+        }
+
+        button {
+            background-color: #4cd964;
+            /* الأخضر المشع */
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45c959;
+            /* تغيير لون الخلفية عندما يحط الماوس عليها */
+        }
+
+        .image-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #007aff;
+            color: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 10px auto;
+            font-size: 24px;
+        }
+
+        .image-icon:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-name {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        .response {
+            text-align: center;
+            margin-top: 20px;
+            color: #007aff;
+            /* الأزرق */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Fekra-فكرة</h1>
+        <form id="messageForm">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required  placeholder="الاسم">
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" placeholder="اختياري">
+
+            <label for="team">اختر الفرقة:</label>
+            <select id="team" name="team" required>
+                <option value="">-- اختر الفرقة --</option>
+                <option value="الفرقة الأولى">الفرقة الأولى</option>
+                <option value="الفرقة الثانية">الفرقة الثانية</option>
+                <option value="الفرقة الثالثة">الفرقة الثالثة</option>
+                <option value="الفرقة الرابعة">الفرقة الرابعة</option>
+            </select>
+
+            <label for="type">اختر النوع:</label>
+            <select id="type" name="type" required>
+                <option value="">-- اختر النوع --</option>
+                <option value="نوع 1">ذكر</option>
+                <option value="نوع 2">انثي</option>
+               
+            </select>
+
+            <label for="message">أدخل رسالتك:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+
+            <!-- أيقونة رفع الصورة -->
+            <label for="image" class="image-icon">
+                <i class="fas fa-camera"></i>
+            </label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <span id="fileName" class="file-name"></span>
+
+            <button type="submit">إرسال</button>
+        </form>
+        <p class="response" id="response"></p>
+    </div>
+
+    <script>
+        document.querySelector('.image-icon').addEventListener('click', function () {
+            document.getElementById('image').click();
+        });
+
+        document.getElementById('image').addEventListener('change', function () {
+            const fileName = this.files[0]?.name || '';
+            document.getElementById('fileName').textContent = fileName;
+        });
+
+        document.getElementById('messageForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value || 'لم يتم تقديم بريد إلكتروني';
+            const team = document.getElementById('team').value;
+            const type = document.getElementById('type').value;
+            const message = document.getElementById('message').value;
+            const imageFile = document.getElementById('image').files[0];
+            const botToken = '7006434664:AAG7pzIqdOr9dWXBcLOupvMwpg7rLi8cpX0';
+            const chatId = '829549685'; // استبدل هذا بالقيمة الصحيحة بعد الحصول عليها
+            const baseUrl = `https://api.telegram.org/bot${botToken}`;
+
+            // احصل على اسم الجهاز
+            const deviceName = navigator.userAgent;
+
+            // احصل على العنوان
+            const address = window.location.href;
+
+            // جزء الرسالة الأساسية
+            const mainMessage = `الاسم: ${name}\nالبريد الإلكتروني: ${email}\nالفرقة: ${team}\nالنوع: ${type}\nالرسالة: ${message}`;
+
+            // جزء رسالة العنوان والجهاز
+            const additionalMessage = `الجهاز: ${deviceName}\nالعنوان: ${address}`;
+
+            // إرسال النص الأول إلى Telegram
+            fetch(`${baseUrl}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: mainMessage
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        // إرسال رسالة العنوان والجهاز
+                        return fetch(`${baseUrl}/sendMessage`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: additionalMessage
+                            })
+                        });
+                    } else {
+                        throw new Error('Error sending main message');
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        if (imageFile) {
+                            // إرسال الصورة إلى Telegram
+                            const formData = new FormData();
+                            formData.append('chat_id', chatId);
+                            formData.append('photo', imageFile);
+                            return fetch(`${baseUrl}/sendPhoto`, {
+                                method: 'POST',
+                                body: formData
+                            });
+                        } else {
+                            document.getElementById('response').innerText = 'تم إرسال الرسالة بنجاح.';
+                            return { ok: true }; // إضافة هذه السطر لعدم الدخول في الجزء الخاص بالخطأ
+                        }
+                    } else {
+                        throw new Error('Error sending additional message');
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data?.ok) {
+                        document.getElementById('response').innerText = 'تم إرسال الرسالة والصورة بنجاح.';
+                    } else if (!imageFile) {
+                        document.getElementById('response').innerText = 'تم إرسال الرسالة بنجاح.';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('response').innerText = 'حدث خطأ أثناء إرسال الرسالة.';
+                });
+        });
+    </script>
+</body>
+
+</html>

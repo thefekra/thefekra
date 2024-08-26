@@ -1,0 +1,173 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    background-color: #f0f0f0;
+
+}
+
+.box {
+    padding: 10px;
+    margin: 13px;
+    background-color: #ffffff;
+    border: 1px solid #c4bbbb;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.box1 {
+    padding: 10px;
+    margin: 13px;
+    background-color: #ffffff;
+    border: 1px solid #c4bbbb;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* ===== MEDIA QUERIES=====*/
+
+.img img {
+    width: 125px;
+    height: 175px;
+}
+
+a {
+    margin: -10px;
+    background-color: #0E2431;
+    color: rgb(255, 255, 255);
+
+    border-radius: 0 0 8px 8px;
+    padding: 55px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+
+}
+
+
+
+
+/* صناديق في الشاشة الكبيرة */
+@media screen and (min-width: 1200px) {
+    .section {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .box {
+        width: 18%;
+        /* توزيع العرض بشكل مناسب ليكون هناك تباعد بين الصناديق */
+        height: 29.1%;
+        padding-bottom: 17px;
+        margin-top: 5%;
+        margin-bottom: var(--mb-6);
+    }
+
+    .box1 {
+        width: 18%;
+        /* توزيع العرض بشكل مناسب ليكون هناك تباعد بين الصناديق */
+        height: 29.1%;
+        padding-bottom: 17px;
+        margin-top: 5%;
+        margin-bottom: var(--mb-6);
+    }
+
+    a {
+        margin: -10px;
+        background-color: #0E2431;
+        color: rgb(255, 255, 255);
+
+        border-radius: 0 0 8px 8px;
+        padding: 110px;
+        padding-top: 5px;
+        padding-bottom: 17.5px;
+
+    }
+
+    .img img {
+        width: 160px;
+        height: 205px;
+    }
+
+}
+
+
+
+
+/* صناديق في الشاشة الصغيرة */
+@media screen and (max-width: 1199px) {
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .box {
+        width: 33%;
+        /* توزيع العرض بشكل مناسب ليكون هناك تباعد بين الصناديق */
+        height: 200px;
+        margin-top: 8%;
+        margin-bottom: var(--mb-6);
+    }
+
+    .box1 {
+        width: 33%;
+        /* توزيع العرض بشكل مناسب ليكون هناك تباعد بين الصناديق */
+        height: 200px;
+        margin-top: 15%;
+        margin-bottom: var(--mb-6);
+    }
+}
+
+
+/* أسلوب CSS للروابط */
+a {
+    /* تحديد لون الخط الأسود */
+    text-decoration: none;
+    /* إزالة خط الزخرفة (التأثير) عند النقر */
+}
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    /* لون خلفية الشريط العلوي */
+    height: 50px;
+    /* ارتفاع الشريط العلوي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* جعل الشريط ثابتًا في الأعلى */
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.logo img {
+    width: 40px;
+    /* عرض الوجو */
+    height: 40px;
+    /* ارتفاع الوجو */
+}
+
+.logoo img {
+    width: 100px;
+    /* عرض الوجو */
+    height: 52px;
+    /* ارتفاع الوجو */
+}
+
+
+
+.logo a {
+    margin-left: 350%;
+    width: 50px;
+    padding: 0;
+}

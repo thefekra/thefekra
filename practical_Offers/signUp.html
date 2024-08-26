@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد</title>
+    <style>
+        /* أسلوب CSS */
+        .hidden {
+            display: none;
+        }
+
+        /* تنسيق مربع الإنشاء */
+        #signupBox {
+            width: 300px;
+            margin: 100px auto;
+            background-color:rgb(31, 23, 75) ;
+            /* توسيط عمودياً */
+            border: 10px solid rgb(31, 23, 75);
+            padding: 20px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        /* تنسيق زر الإنشاء */
+        #signupButton {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="signupBox">
+        <form id="signupForm" action="#" method="post">
+            <!-- المرحلة الأولى -->
+            <div id="firstStep">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <label for="college">مكان الكلية:</label>
+                <select id="college" name="college">
+                    <option value="college1">كلية 1</option>
+                    <option value="college2">كلية 2</option>
+                    <option value="college3">كلية 3</option>
+                </select><br><br>
+                <button type="button" onclick="showNextStep()" id="signupButton">التالي</button>
+            </div>
+
+            <!-- المرحلة الثانية (مخفية بالبداية) -->
+            <div id="secondStep" class="hidden">
+                <label for="department">الشعبة:</label>
+                <select id="department" name="department">
+                    <option value="department1">شعبة 1</option>
+                    <option value="department2">شعبة 2</option>
+                    <option value="department3">شعبة 3</option>
+                </select><br><br>
+                <label for="gender">النوع:</label>
+                <select id="gender" name="gender">
+                    <option value="male">ذكر</option>
+                    <option value="female">أنثى</option>
+                </select><br><br>
+                <button type="submit">إنشاء حساب جديد</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function showNextStep() {
+            document.getElementById("firstStep").classList.add("hidden");
+            document.getElementById("secondStep").classList.remove("hidden");
+        }
+    </script>
+</body>
+
+</html>

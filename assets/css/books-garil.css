@@ -1,0 +1,274 @@
+
+
+/* أسلوب CSS للروابط */
+a {
+    color: black;
+    /* تحديد لون الخط الأسود */
+    text-decoration: none;
+    /* إزالة خط الزخرفة (التأثير) عند النقر */
+}
+
+/* أسلوب CSS للروابط النشطة عند النقر عليها */
+a:active {
+    color: black;
+    /* تحديد لون الخط الأسود */
+}
+.navbar {
+    background-color: rgb(255, 255, 255);
+    /* لون خلفية الشريط العلوي */
+    height: 60px;
+    /* ارتفاع الشريط العلوي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* جعل الشريط ثابتًا في الأعلى */
+    top: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+
+.x img {
+    width: 100px;
+        /* عرض الوجو */
+        height: 59px;
+        /* ارتفاع الوجو */
+        margin-left: -180px;
+}
+
+.logo img {
+    width: 40px;
+    /* عرض الوجو */
+    height: 40px;
+    /* ارتفاع الوجو */
+}
+
+.name {
+    margin-left: 10px;
+    /* المسافة بين الوجو والاسم */
+}
+.name h1 {
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+.tab-bar {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: #0B1541;
+    padding: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    border-radius:0 0 10px 10px;
+    z-index: 9999;
+    /* لتأكيد أنه في الأعلى عند التمرير */
+}
+
+.tab-bar .tab {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-bar .tab.active {
+    border-bottom: none;
+}
+
+.tab-bar .tab.active:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    transition: transform 0.3s, width 0.3s;
+}
+
+.tab-bar .tab.active {
+    border-bottom: none;
+}
+
+.tab-bar .tab.active:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 90px;
+    transform: translateX(-50%);
+    height: 4px;
+    border-radius: 2px;
+    background-color: #f9fdff;
+}
+
+.tab-bar .tab.active span {
+    color: #ffffff;
+}
+
+.tab-bar .tab span {
+    margin: 0 10px;
+    color: rgb(190, 189, 189);
+    transition: color 0.3s;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+    margin-top: 40px;
+    /* تعديل هام: قم بتعيين ارتفاع (margin-top) يساوي ارتفاع الشريط ليظهر المحتوى أسفله */
+}
+
+
+
+/* أسلوب CSS لصناديق الكتب */
+.book-cover {
+    display: inline-block;
+    width: 250px;
+    /* تعديل العرض حسب الحاجة */
+    height: 260px;
+    /* تعديل الطول حسب الحاجة */
+    margin: 15px;
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #0b1541;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.315) ;
+    padding: 10px; 
+}
+
+.book-cover img {
+    width: 210px;
+    height: 230px;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+
+.download-button {
+    display: block;
+    margin-top: 14px;
+    margin-left: -10px;
+    background-color: #1EFF71;
+    color: #d56f00;
+    font-size: 20px;
+    font-weight: bold;
+        /* حدد حجم الخط المرغوب */
+    padding: 5% 40%;
+    width: 70px;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+
+/* الشريط الجانبي */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    /* تبدأ من الجهة اليمنى */
+    width: 250px;
+    height: 80%;
+    top: 95px;
+    background-color: #001f3d;
+    color: #fff;
+    padding-top: 30px;
+    transition: right 0.3s;
+    z-index: 1000;
+    clip-path: circle(100% at 100% 50%);
+        border-radius: 0  0 10px 10px;
+}
+
+
+/* زر الشريط الجانبي */
+.sidebar-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    /* الجهة اليسرى */
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    z-index: 3;
+}
+
+
+/* تنسيق الأزرار الفرعية */
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 10px 10px 10px 10px;
+    text-align: right;
+    /* تحديد اتجاه النص إلى اليمين */
+    direction: rtl;
+    /* تحديد اتجاه اللغة من اليمين إلى اليسار */
+    margin: 5px;
+    /* إضافة هامش خارجي حول النص */
+    background-color: transparent;
+    /* تجعل الخلفية شفافة */
+    border: 1px solid rgb(197, 193, 193);
+    /* تحديد حدود بلون أبيض */
+}
+.sidebar a i {
+    margin-right: 10px;
+    color: #ffffff;
+    /* تغيير لون الأيقونة إلى أحمر */
+    transition: color 0.3s;
+    /* تضمين تأثير انتقالي لتغيير اللون بسلاسة */
+}
+
+.sidebar a:hover i {
+    color: #11171a;
+    /* تغيير لون الأيقونة عند تمرير المؤشر فوقها إلى الأسود */
+}
+.sidebar a:hover {
+    background-color: hwb(225 97% 0%);
+    color: #0E2431;
+}
+
+
+/* تحديد ستايل للصورة */
+img {
+    width: 25px;
+    /* حجم الصورة حسب الحاجة */
+    height: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

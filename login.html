@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fekra</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/books.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="tab-bar">
+        <!-- Content here -->
+    </div>
+
+    <!-- Home content -->
+    <div id="content-right" class="tab-content active">
+        <div class="container">
+            <!-- Header -->
+            <header class="l-header">
+                <nav class="nav bd-grid">
+                    <div class="navbar">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="assets/imgs/LOGO.png" alt="Logo">
+                            </a>
+                        </div>
+                        <div class="name">
+                            <a href="#" class="fekra">
+                                <h1>Fekra</h1>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Login Form -->
+            <div class="form-container">
+                <div id="login-form">
+                    <h2>تسجيل الدخول</h2>
+                    <input type="email" id="login-email" placeholder="البريد الإلكتروني" required>
+                    <div class="input-container">
+                        <input type="password" id="login-password" placeholder="كلمة المرور">
+                        <span class="show-password" onclick="togglePasswordVisibility('login-password')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-2.67 0-5.11-1.36-6.53-3.58.31-.48.68-.92 1.1-1.32l1.43 1.43c-.27.23-.53.47-.76.73-.56.66-.97 1.41-1.18 2.24 1.1 1.46 2.78 2.41 4.66 2.41 1.04 0 2.01-.3 2.82-.81l1.42 1.42c-1.38.84-3.01 1.34-4.74 1.34zm1.74-4.36l2.27 2.27c.38-.29.71-.62 1-1l-2.27-2.27c-.38.29-.71.62-1 1zM12 6c2.67 0 5.11 1.36 6.53 3.58-.31.48-.68.92-1.1 1.32l-1.43-1.43c.27-.23.53-.47.76-.73.56-.66.97-1.41 1.18-2.24-1.1-1.46-2.78-2.41-4.66-2.41-1.04 0-2.01.3-2.82.81l-1.42-1.42c1.38-.84 3.01-1.34 4.74-1.34zm-4.34 4.24l-2.27-2.27c-.38.29-.71.62-1 1l2.27 2.27c.38-.29.71-.62 1-1z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <button onclick="login()">تسجيل الدخول</button>
+                    <p>ليس لديك حساب؟ <a href="#" onclick="showRegisterForm()">إنشاء حساب جديد</a></p>
+                </div>
+
+                <!-- Register Form -->
+                <div id="register-form" style="display: none;">
+                    <h2>إنشاء حساب جديد</h2>
+                    <input type="text" id="register-name" placeholder="الاسم" required>
+                    <input type="email" id="register-email" placeholder="البريد الإلكتروني" required>
+                    <div class="input-container">
+                        <input type="password" id="register-password" placeholder="كلمة المرور">
+                        <span class="show-password" onclick="togglePasswordVisibility('register-password')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-2.67 0-5.11-1.36-6.53-3.58.31-.48.68-.92 1.1-1.32l1.43 1.43c-.27.23-.53.47-.76.73-.56.66-.97 1.41-1.18 2.24 1.1 1.46 2.78 2.41 4.66 2.41 1.04 0 2.01-.3 2.82-.81l1.42 1.42c-1.38.84-3.01 1.34-4.74 1.34zm1.74-4.36l2.27 2.27c.38-.29.71-.62 1-1l-2.27-2.27c-.38.29-.71-.62-1-1zM12 6c2.67 0 5.11 1.36 6.53 3.58-.31.48-.68.92-1.1 1.32l-1.43-1.43c.27-.23.53-.47.76-.73.56-.66.97-1.41 1.18-2.24-1.1-1.46-2.78-2.41-4.66-2.41-1.04 0-2.01.3-2.82.81l-1.42-1.42c1.38-.84 3.01-1.34 4.74-1.34zm-4.34 4.24l-2.27-2.27c-.38.29-.71-.62-1-1l2.27 2.27c.38-.29.71-.62 1-1z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <label for="register-college">الكلية</label>
+                    <select id="register-college" required>
+                        <option value="" disabled selected>اختر الكلية</option>
+                        <option value="تربية">التربية</option>
+                    </select>
+
+                    <label for="register-squad">الفرقة</label>
+                    <select id="register-squad" required>
+                        <option value="" disabled selected>اختر الفرقة</option>
+                        <option value="الاولي">الفرقة الاولي</option>
+                        <option value="الثانية">الفرقة الثانية</option>
+                        <option value="الثالثة">الفرقة الثالثة</option>
+                        <option value="الرابعة">الفرقة الرابعة</option>
+                    </select>
+
+                    <label for="register-department">الشعبة</label>
+                    <select id="register-department" required>
+                        <option value="" disabled selected>اختر الشعبة</option>
+                        <option value="العلوم البيولوجية والجيولوجية">العلوم البيولوجية والجيولوجية</option>
+                        <!-- Add other options if available -->
+                    </select>
+
+                    <label for="register-gender">النوع</label>
+                    <select id="register-gender" required>
+                        <option value="" disabled selected>اختر النوع</option>
+                        <option value="ذكر">ذكر</option>
+                        <option value="أنثى">أنثى</option>
+                    </select>
+                    <button onclick="register()">إنشاء حساب</button>
+                    <p>هل لديك حساب؟ <a href="#" onclick="showLoginForm()">تسجيل الدخول</a></p>
+                </div>
+            </div>
+
+            <!-- Redirect Form -->
+            <div id="redirect-form" class="form-container" style="display: none;">
+                <h2> فلسطين في الدم   </h2>
+                <h3> كان الله مع اهل غزة</h3>
+                <p id="redirect-message"> صلي علي النبي محمد ...</p>
+            </div>
+        </div>
+    </div>
+    <script src=""></script>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        function showRegisterForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        }
+
+        function login() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            // قم بالتحقق من بيانات تسجيل الدخول هنا
+            console.log('تسجيل الدخول باستخدام:', email, password);
+            alert('تم تسجيل الدخول بنجاح!');
+        }
+
+        function register() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const college = document.getElementById('register-college').value;
+            const squad = document.getElementById('register-squad').value;
+            const department = document.getElementById('register-department').value;
+            const gender = document.getElementById('register-gender').value;
+
+            // قم بالتحقق من بيانات إنشاء الحساب هنا
+            console.log('إنشاء حساب باستخدام:', name, email, password, college, squad, department, gender);
+            alert('تم إنشاء الحساب بنجاح!');
+
+            // بعد التحقق بنجاح، إعادة التوجيه إلى الصفحة المناسبة
+            redirect(college, squad, department, gender);
+        }
+
+        function togglePasswordVisibility(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        function redirect(college, squad, department, gender) {
+            // إعداد رسالة التوجيه
+            const redirectMessage = document.getElementById('redirect-message');
+            redirectMessage.textContent = `صلي علي النبي محمد..`;
+
+            // إظهار نموذج التوجيه
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('redirect-form').style.display = 'block';
+
+            // تحديد الصفحة الهدف بناءً على الاختيارات
+            let targetPage = '';
+
+            // تحديد الصفحات بناءً على القيم المدخلة
+            if (college === 'تربية') {
+                if (department === 'العلوم البيولوجية والجيولوجية') {
+                    if (gender === 'ذكر') {
+                        switch (squad) {
+                            case 'الاولي':
+                                targetPage = 'education-first-male.html';
+                                break;
+                            case 'الثانية':
+                                targetPage = 'education-second-male.html';
+                                break;
+                            case 'الثالثة':
+                                targetPage = 'education-third-male.html';
+                                break;
+                            case 'الرابعة':
+                                targetPage = 'education-fourth-male.html';
+                                break;
+                        }
+                    } else if (gender === 'أنثى') {
+                        switch (squad) {
+                            case 'الاولي':
+                                targetPage = 'education-first-female.html';
+                                break;
+                            case 'الثانية':
+                                targetPage = 'education-second-female.html';
+                                break;
+                            case 'الثالثة':
+                                targetPage = 'education-third-female.html';
+                                break;
+                            case 'الرابعة':
+                                targetPage = 'education-fourth-female.html';
+                                break;
+                        }
+                    }
+                }
+            } else if (college === 'علوم') {
+                // إضافة الشرط للكلية "علوم" إذا كان مطلوبًا
+                // لنفرض أن لدينا صفحة افتراضية لكل كلية
+                targetPage = 'science.html';
+            } else {
+                targetPage = 'generic-page.html'; // صفحة افتراضية في حالة عدم تطابق الشروط
+            }
+
+            // توجيه المستخدم بعد ثانية واحدة (1000 مللي ثانية)
+            setTimeout(function () {
+                window.location.href = targetPage;
+            }, 1000);
+        }
+    </script>
+
+<script>
+   
+</script>
+</body>
+
+</html>
