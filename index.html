@@ -42,6 +42,10 @@
 
 
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5906497501315875"
+
+        crossorigin="anonymous"></script>
+
     <style>
 
         .container {
@@ -262,17 +266,7 @@
 
 
 
-
-
-        .x h1{
-
-            color: rgb(255, 255, 255);
-
-
-
-        }
-
-        /* تنسيق العناصر */
+        
 
     </style>
 
@@ -392,11 +386,13 @@
 
             <!--===== HOME =====-->
 
+        <main class="l-main">
+
+            <!--===== HOME =====-->
+
             <section class="home bd-grid" id="home">
 
                 <div class="home__data">
-
-
 
                     <h1 class="home__title">,مرحبا بك في<br>
 
@@ -404,7 +400,7 @@
 
                         <br>
 
-                        <h3> منصة تعليمية لكلية التربية
+                        <h3> منصة تعليمية لكلية التربية باسيوط
 
                             <br>العلوم البيولوجية والجيولوجية
 
@@ -412,35 +408,17 @@
 
                     </h1>
 
+        
 
+                    <a href="login.html" class="button">تسجيل الدخول</a>
 
                 </div>
 
-
-
-
-
-<div class="x">
-
-    <button>
-
-    <a href="login.html" class="login-link">
-
-        <h1>تسجيل الدخول</h1>
-
-    </a>
-
-    </button>
-
-</div>
+        
 
             </section>
 
-
-
-            
-
-
+        
 
             <!--===== ABOUT =====-->
 
@@ -448,21 +426,21 @@
 
                 <h2 class="section-title">عن المنصة</h2>
 
-
+        
 
                 <div class="about__container bd-grid">
 
                     <div class="about__img">
 
-                        <img src="assets/imgs/about.jpg" alt="">
+                        <img src="assets/imgs/55.png" alt="">
 
                     </div>
 
-
+        
 
                     <div>
 
-                        <h2 class="about__subtitle">Fekra</h2>
+                        <h2 class="about__subtitle">Fekra-فكرة</h2>
 
                         <p class="about__text">
 
@@ -488,39 +466,35 @@
 
             </section>
 
+        
 
-
-
-
-            <!-- 
-
-            ===== CONTACT =====
+           
 
             <section class="contact section" id="contact">
 
                 <h2 class="section-title">إتصال</h2>
 
-
-
                 <div class="contact__container bd-grid">
 
-                    <form action="" class="contact__form">
+                    <form id="messageForm" class="contact__form">
 
-                        <input type="text" placeholder="الاسم" class="contact__input">
+                        <input type="text" id="name" placeholder="الاسم" class="contact__input" required>
 
-                        <input type="mail" placeholder="Email" class="contact__input">
+                        <input type="email" id="email" placeholder="Email" class="contact__input" required>
 
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea id="message" cols="0" rows="10" class="contact__input" placeholder="الرسالة" required></textarea>
 
-                        <input type="button" value="Enviar" class="contact__button button">
+                        <button type="submit" class="contact__button button">Enviar</button>
 
                     </form>
+
+                    <div id="response"></div>
 
                 </div>
 
             </section>
 
-        </main> -->
+        </main> 
 
 
 
@@ -586,8 +560,116 @@
 
 
 
+<script src="assets/js/visitor.js"></script>
+
+
+
+    <script>
+
+        document.getElementById('messageForm').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+
+
+            const name = document.getElementById('name').value;
+
+            const email = document.getElementById('email').value;
+
+            const message = document.getElementById('message').value;
+
+            const botToken = '7006434664:AAG7pzIqdOr9dWXBcLOupvMwpg7rLi8cpX0';
+
+            const chatId = '829549685'; // استبدل هذا بالقيمة الصحيحة بعد الحصول عليها
+
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+
+
+            // احصل على اسم الجهاز
+
+            const deviceName = navigator.userAgent;
+
+
+
+            // احصل على العنوان
+
+            const address = window.location.href;
+
+
+
+            // جزء الرسالة الأولى
+
+            const firstMessagePart = `الاسم: ${name}\nالبريد الإلكتروني: ${email}\nالرسالة: ${message}`;
+
+
+
+            // جزء الرسالة الثاني
+
+            const secondMessagePart = `\n\nالجهاز: ${deviceName}\nالعنوان: ${address}`;
+
+
+
+            // تجميع الرسائل
+
+            const fullMessage = `${firstMessagePart}${secondMessagePart}`;
+
+
+
+            fetch(url, {
+
+                method: 'POST',
+
+                headers: {
+
+                    'Content-Type': 'application/json'
+
+                },
+
+                body: JSON.stringify({
+
+                    chat_id: chatId,
+
+                    text: fullMessage
+
+                })
+
+            })
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    if (data.ok) {
+
+                        document.getElementById('response').innerText = 'تم إرسال الرسالة بنجاح.';
+
+                    } else {
+
+                        document.getElementById('response').innerText = 'حدث خطأ أثناء إرسال الرسالة.';
+
+                    }
+
+                })
+
+                .catch(error => {
+
+                    document.getElementById('response').innerText = 'حدث خطأ أثناء إرسال الرسالة.';
+
+                    console.error('Error:', error);
+
+                });
+
+        });
+
+    </script>
+
+
+
+
+
 </body>
 
 
 
-            </html>
+    </html>
