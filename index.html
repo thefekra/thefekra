@@ -1,71 +1,34 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- =====BOX ICONS===== -->
-
     <meta property="og:url" content="https://thefekra.github.io/Beta-fekra/" />
-
     <meta property="og:site_name" content="Fekra" />
-
     <meta property="og:description"
-
         content="مرحبًا في Fekra: منصة توفير الكتب التعليمية. اكتشف مجموعتنا المتنوعة من الكتب التعليمية المجانية واستفد منها لتطوير معرفتك وتحقيق أهدافك التعليمية." />
-
     <meta property="og:image" content="assets/imgs/logo (1).jpg" />
-
     <meta property="og:image:type" content="image/jpg" />
-
     <meta property="og:image:width" content="300" />
-
     <title>Fekra</title>
-
     <link rel="stylesheet" href="assets/css/home.css">
-
     <link rel="stylesheet" href="assets/css/books.css">
-
     <link rel="stylesheet" href="assets/css/styles.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="shortcut icon" href="assets/imgs/favicon.ico" type="image/x-icon">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5906497501315875"
-
         crossorigin="anonymous"></script>
-
     <style>
-
         .container {
-
             text-align: center;
-
             margin: 50px auto;
-
             width: 80%;
-
             max-width: 350px;
-
         }
-
-
-
-
-
-
-
 
 
 
@@ -73,444 +36,221 @@
 
 
         .available-images {
-
             display: none;
-
             justify-content: space-between;
-
             margin-bottom: 10px;
-
             margin-left: 40px;
 
 
-
-
-
         }
-
-
 
         .available-images.show {
-
             display: flex;
-
         }
-
-
 
         .available-image {
-
             width: 30%;
-
             border: 2px solid transparent;
-
             margin-left: -70px;
-
             border-radius: 20%;
-
             /* جعل الحواف دائرية */
 
-
-
             cursor: pointer;
-
             transition: border-color 0.3s ease;
-
         }
-
-
 
         .available-image:hover {
-
             border-color: #007bff;
-
         }
-
-
 
         .selected-image {
-
             text-align: center;
-
             margin-top: 10px;
-
         }
-
-
-
 
 
         /* تغيير حجم وحواف الصورة المختارة */
-
         #selectedImagePreview {
-
             width: 100px;
-
             height: 100px;
-
             object-fit: cover;
-
             border-radius: 20%;
-
             /* جعل الحواف دائرية */
-
             border: 2px solid #007bff;
-
             /* إضافة حدود */
-
             cursor: pointer;
-
         }
-
-
-
 
 
         .cir {
-
             position: relative;
-
             /* تعيين العنصر الحاوي على وضع موضعي */
-
         }
-
-
 
         .cir i.fa-circle-info {
-
             position: fixed;
-
             /* جعل الأيقونة ثابتة في مكانها */
-
             top: 600px;
-
             /* التحكم في المسافة من الأعلى */
-
             right: 50px;
-
             /* التحكم في المسافة من الجهة اليمنى */
-
             margin-top: 10px;
-
             /* التحكم في المسافة العمودية بين الأيقونة والحاوية */
-
             margin-right: 10px;
-
             /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
-
             font-size: 24px;
-
             /* حجم الأيقونة بالبكسل */
-
             color: rgb(0, 7, 37);
 
-
-
         }
-
-
-
-
-
-
 
 
 
 
 
         .cirr {
-
             position: relative;
-
             /* تعيين العنصر الحاوي على وضع موضعي */
-
         }
-
-
 
         .cirr i.fa-headset {
-
             position: fixed;
-
             /* جعل الأيقونة ثابتة في مكانها */
-
             top: 550px;
-
             /* التحكم في المسافة من الأعلى */
-
             right: 50px;
-
             /* التحكم في المسافة من الجهة اليمنى */
-
             margin-top: 10px;
-
             /* التحكم في المسافة العمودية بين الأيقونة والحاوية */
-
             margin-right: 10px;
-
             /* التحكم في المسافة الأفقية بين الأيقونة والحاوية */
-
             font-size: 24px;
-
             /* حجم الأيقونة بالبكسل */
-
             color: rgb(0, 7, 37);
 
-
-
         }
-
-
-
-
 
 
 
         
-
     </style>
-
 </head>
-
-
 
 <body>
 
 
-
-
-
     <div class="tab-bar">
-
        
-
         <div class="tab active right" onclick="switchTab('right')">
-
             <span>الصفحة الرئيسية</span>
 
-
-
         </div>
-
     </div>
-
     <!------------- home------------->
-
     <div id="content-right" class="tab-content active">
-
         <div class="container">
-
             <!-- محتوى الصفحة هنا -->
-
             <!--===== HEADER =====-->
-
             <header class="l-header">
-
                 <nav class="nav bd-grid">
-
                     <div class="navbar">
-
                         <div class="logo">
-
                             <a href="#">
-
                                 <img src="assets/imgs/LOGO.png" alt="Logo">
-
                             </a>
-
                         </div>
-
                         <div class="name">
-
                             <a href="#" class="fekra">
-
                                 <h1>Fekra</h1>
-
                             </a>
-
                         </div>
-
                     </div>
 
-
-
         </div>
-
-
-
 
 
         <div class="cir">
-
             <a href="stop.html">
-
                 <i class="fa-solid fa-circle-info"></i>
-
             </a>
-
         </div>
-
-
 
         <div class="cirr">
-
             <a href="bot.html">
-
                 <i class="fa-solid fa-headset"></i>
-
             </a>
-
         </div>
-
-
 
         <div class="nav__toggle" id="nav-toggle">
-
             <i class='bx bx-menu'></i>
-
         </div>
-
         </nav>
-
         </header>
 
 
-
-
-
         <main class="l-main">
 
 
-
-
-
             <!--===== HOME =====-->
-
         <main class="l-main">
-
             <!--===== HOME =====-->
-
             <section class="home bd-grid" id="home">
-
                 <div class="home__data">
-
                     <h1 class="home__title">,مرحبا بك في<br>
-
                         <span class="home__title-color">Fekra</span>
-
                         <br>
-
                         <h3> منصة تعليمية لكلية التربية باسيوط
-
                             <br>العلوم البيولوجية والجيولوجية
-
                         </h3>
-
                     </h1>
-
         
-
                     <a href="login.html" class="button">تسجيل الدخول</a>
-
                 </div>
-
         
-
             </section>
-
         
-
             <!--===== ABOUT =====-->
-
             <section class="about section " id="about">
-
                 <h2 class="section-title">عن المنصة</h2>
-
         
-
                 <div class="about__container bd-grid">
-
                     <div class="about__img">
-
                         <img src="assets/imgs/55.png" alt="">
-
                     </div>
-
         
-
                     <div>
-
                         <h2 class="about__subtitle">Fekra-فكرة</h2>
-
                         <p class="about__text">
-
                         <h3>
-
                             ستجد بها كل المواد الدراسية المتعلقة
-
                             <u> بالعلوم البيولوجية والجيولوجية</u>
-
                             لجميع الفرق الدراسية المختلفة.
-
                             نحن نهدف إلى توفير تجربة تعليمية شاملة وشيقة لطلابنا،
-
                             وذلك من خلال جمع كافة الموارد اللازمة في مكان واحد سهل الوصول.
-
                         </h3>
-
                         </p>
-
                     </div>
-
                 </div>
-
             </section>
-
         
-
            
-
             <section class="contact section" id="contact">
-
                 <h2 class="section-title">إتصال</h2>
-
                 <div class="contact__container bd-grid">
-
                     <form id="messageForm" class="contact__form">
-
                         <input type="text" id="name" placeholder="الاسم" class="contact__input" required>
-
                         <input type="email" id="email" placeholder="Email" class="contact__input" required>
-
                         <textarea id="message" cols="0" rows="10" class="contact__input" placeholder="الرسالة" required></textarea>
-
                         <button type="submit" class="contact__button button">Enviar</button>
-
                     </form>
-
                     <div id="response"></div>
-
                 </div>
-
             </section>
-
         </main> 
 
 
-
-
-
     </div>
-
     </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -519,157 +259,91 @@
 
 
     <!--===== FOOTER =====-->
-
     <footer class="footer">
-
         <p class="footer__title">Fekra</p>
-
         <div class="footer__social">
-
             <!-- أيقونة فيسبوك من Font Awesome -->
-
             <a href="https://www.facebook.com/thefekra" class="footer__icon" target="_blank"><i class="fab fa-facebook"
-
                     style="color: #ffffff;"></i></a>
-
-
 
             <!-- أيقونة تلجرام من Font Awesome -->
-
             <a href="https://t.me/thefekra" class="footer__icon" target="_blank"><i class="fab fa-telegram"
-
                     style="color: #ffffff;"></i></a>
-
-
 
             <!-- أيقونة تويتر من Font Awesome -->
-
             <a href="https://twitter.com/the_fekra?s=09" class="footer__icon" target="_blank"><i class="fab fa-twitter"
-
                     style="color: #ffffff;"></i></a>
-
         </div>
-
         <p>&#169; 2023 Coding Fekra</p>
-
     </footer>
-
-
-
-
 
 
 
 <script src="assets/js/visitor.js"></script>
 
-
-
     <script>
-
         document.getElementById('messageForm').addEventListener('submit', function (event) {
-
             event.preventDefault();
 
-
-
             const name = document.getElementById('name').value;
-
             const email = document.getElementById('email').value;
-
             const message = document.getElementById('message').value;
-
             const botToken = '7006434664:AAG7pzIqdOr9dWXBcLOupvMwpg7rLi8cpX0';
-
             const chatId = '829549685'; // استبدل هذا بالقيمة الصحيحة بعد الحصول عليها
-
             const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-
-
             // احصل على اسم الجهاز
-
             const deviceName = navigator.userAgent;
 
-
-
             // احصل على العنوان
-
             const address = window.location.href;
 
-
-
             // جزء الرسالة الأولى
-
             const firstMessagePart = `الاسم: ${name}\nالبريد الإلكتروني: ${email}\nالرسالة: ${message}`;
 
-
-
             // جزء الرسالة الثاني
-
             const secondMessagePart = `\n\nالجهاز: ${deviceName}\nالعنوان: ${address}`;
 
-
-
             // تجميع الرسائل
-
             const fullMessage = `${firstMessagePart}${secondMessagePart}`;
 
-
-
             fetch(url, {
-
                 method: 'POST',
-
                 headers: {
-
                     'Content-Type': 'application/json'
-
                 },
-
                 body: JSON.stringify({
-
                     chat_id: chatId,
-
                     text: fullMessage
-
                 })
-
             })
-
                 .then(response => response.json())
-
                 .then(data => {
-
                     if (data.ok) {
-
                         document.getElementById('response').innerText = 'تم إرسال الرسالة بنجاح.';
-
                     } else {
-
                         document.getElementById('response').innerText = 'حدث خطأ أثناء إرسال الرسالة.';
-
                     }
-
                 })
-
                 .catch(error => {
-
                     document.getElementById('response').innerText = 'حدث خطأ أثناء إرسال الرسالة.';
-
                     console.error('Error:', error);
-
                 });
-
         });
-
     </script>
+<script>
+    // الحصول على وكيل المستخدم
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-
-
+    // التحقق من نظام التشغيل
+    if (/android/i.test(userAgent) || /windows/i.test(userAgent)) {
+        // إذا كان المستخدم يستخدم Android أو Windows، يتم إعادة التوجيه لصفحة أخرى
+        window.location.href = "go.html";
+    }
+  // إذا كان المستخدم يستخدم iPhone أو Mac، لا يتم إعادة التوجيه (يبقى في الموقع)
+</script>
 
 
 </body>
 
-
-
-    </html>
+</html>
