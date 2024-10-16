@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://thefekra.github.io/Beta-fekra/" />
+  <meta property="og:site_name" content="Fekra" />
+  <meta property="og:description"
+    content="مرحبًا في Fekra: منصة توفير الكتب التعليمية. اكتشف مجموعتنا المتنوعة من الكتب التعليمية المجانية واستفد منها لتطوير معرفتك وتحقيق أهدافك التعليمية." />
+  <meta property="og:image" content="../assets/imgs/logo (1).jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="300" />
+  <title>Fekra</title>
+  <link rel="stylesheet" href="../assets/css/books-garil.css">
+  <link rel="stylesheet" href="../assets/css/styles-garil.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5906497501315875"
+    crossorigin="anonymous"></script>
+    <script>
+      // الحصول على وكيل المستخدم
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // التحقق من نظام التشغيل
+      if (/android/i.test(userAgent) || /windows/i.test(userAgent)) {
+        // إذا كان المستخدم يستخدم Android أو Windows، يتم إعادة التوجيه لصفحة أخرى
+        window.location.href = "go.html";
+      }
+      // إذا كان المستخدم يستخدم iPhone أو Mac، لا يتم إعادة التوجيه (يبقى في الموقع)
+    </script>
+
+  <style>
+    .container {
+      text-align: center;
+      margin: 50px auto;
+      width: 80%;
+      max-width: 300px;
+      position: relative;
+      /* تجعل العنصر نسبي ليتم وضع الصورة داخله */
+    }
+
+    .available-images {
+      display: none;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      margin-left: 40px;
+    }
+
+    .available-images.show {
+      display: flex;
+    }
+
+    .available-image {
+      width: 30%;
+      border: 2px solid transparent;
+      border-radius: 20%;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+
+    .available-image:hover {
+      border-color: #007bff;
+    }
+
+    .selected-image {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* تغيير حجم وحواف الصورة المختارة */
+    #selectedImagePreview {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 20%;
+      border: 2px solid #007bff;
+      cursor: pointer;
+      position: absolute;
+      /* تجعل العنصر مطلق الوضع ليمكن وضعه في الزاوية */
+      top: 25px;
+      /* للوضع في الجزء العلوي */
+      right: 30px;
+      /* للوضع في الجهة اليمنى */
+      transform: translate(50%, -50%);
+      /* للوضع في منتصف الجزء العلوي اليمني */
+      position: fixed;
+      /* تجعل الصورة ثابتة أثناء التمرير */
+
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- ------------------------------------------- -->
+  <div class="navbar">
+    
+    <div class="x">
+      <img src="../assets/imgs/gaza.png" alt="Logo">
+    </div>
+
+    <div class="logo">
+      <a href="#">
+        <img src="../assets/imgs/LOGO.png" alt="Logo">
+      </a>
+    </div>
+    <div class="name">
+      <a href="#">
+        <h1>Fekra</h1>
+      </a>
+    </div>
+  </div>
+
+  
+<div class="sidebar-icon" onclick="toggleSidebar()">
+  <i class="fa-solid fa-bars"></i>
+</div>
+<div class="sidebar" id="sidebar">
+  <!-- <a href="../index.html">
+      <i class="fa-solid fa-house"></i>
+      <span> الصفحة الرئيسية</span>
+    </a> -->
+
+<a href="../index1.html">
+  <i class="fa-solid fa-robot"></i>
+  <span>عطل فني</span>
+</a>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <hr>
+  <br>
+ 
+
+
+
+</div>
+
+  <!-- دي لو عاوز تظهر الصوره البوفيل ويتجه مباشرة الي صفحة تغير البيانات او تسجيل الخروج ---------------------------->
+  <!--
+<a href="../login/user.html">
+   جزء صورة البروفايل 
+  <div class="selected-image">
+    <img id="selectedImagePreview" src="assets/imgs/logo (3).jpg" alt="صورة البروفايل المختارة">
+  </div>
+  <label class="profile-image" for="profileImage"></label>
+  <div class="input-container">
+    <div class="available-images">
+      <img class="available-image" src="assets/imgs/logo (3).jpg" alt="صورة 1"
+        onclick="selectProfileImage('assets/imgs/logo (3).jpg')">
+      <img class="available-image" src="assets/imgs/logo (1).jpg" alt="صورة 2"
+        onclick="selectProfileImage('assets/imgs/logo (1).jpg')">
+      <img class="available-image" src="assets/imgs/logo (2).jpg" alt="صورة 3"
+        onclick="selectProfileImage('assets/imgs/logo (2).jpg')">
+      <img class="available-image" src="assets/imgs/logo (3).jpg" alt="صورة 1"
+        onclick="selectProfileImage('assets/imgs/logo (3).jpg')">
+    </div>
+  </div>
+</a>
+-->
+
+
+
+
+
+  <div class="tab-bar">
+    <div class="tab" onclick="switchTab('left')">
+      <span>الترم الثاني </span>
+    </div>
+    <div class="tab active right" onclick="switchTab('right')">
+      <span> الترم الاول</span>
+    </div>
+  </div>
+  <!-------------ملفات الترم الاول------------->
+  <div id="content-right" class="tab-content active">
+  </div>
+
+  <!-------------ملفات الترم الثاني------------->
+  <div id="content-left" class="tab-content">
+  </div>
+
+  <!--===== FOOTER =====-->
+  <footer class="footer">
+    <p class="footer__title">Fekra</p>
+    <div class="footer__social">
+      <!-- أيقونة فيسبوك من Font Awesome -->
+      <a href="https://www.facebook.com/thefekra" class="footer__icon" target="_blank"><i class="fab fa-facebook"
+          style="color: #ffffff;"></i></a>
+
+      <!-- أيقونة تلجرام من Font Awesome -->
+      <a href="https://t.me/thefekra" class="footer__icon" target="_blank"><i class="fab fa-telegram"
+          style="color: #ffffff;"></i></a>
+
+      <!-- أيقونة تويتر من Font Awesome -->
+      <a href="https://twitter.com/the_fekra?s=09" class="footer__icon" target="_blank"><i class="fab fa-twitter"
+          style="color: #ffffff;"></i></a>
+    </div>
+    <p>&#169; 2023 Coding Fekra</p>
+  </footer>
+
+
+  <script src="../assets/js/book-girls/book1.js"></script>
+  <script src="../assets/js/books.js"></script>
+
+
+
+  <script>
+
+    // تحقق من حالة تسجيل الدخول عند تحميل الصفحة
+    checkLoginStatus();
+
+    function checkLoginStatus() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn === 'true') {
+        // جلب بيانات المستخدم من localStorage وعرضها في الحقول
+
+        const profileImage = localStorage.getItem('userProfileImage'); // جلب صورة البروفايل
+
+        document.getElementById('selectedImagePreview').src = profileImage; // عرض صورة البروفايل
+      }
+
+      function saveChanges() {
+        // حفظ التغييرات في بيانات المستخدم وصورة البروفايل في localStorage
+
+        const profileImage = document.getElementById('selectedImagePreview').src; // جلب صورة البروفايل
+
+
+        localStorage.setItem('userProfileImage', profileImage); // حفظ صورة البروفايل
+
+      }
+
+      function logout() {
+        // إزالة بيانات المستخدم من localStorage وتغيير حالة تسجيل الدخول إلى غير مسجل
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userGender');
+        localStorage.removeItem('userTeam');
+        localStorage.removeItem('userProfileImage'); // إزالة صورة البروفايل
+        localStorage.setItem('isLoggedIn', 'false');
+
+      }
+    }
+  </script>
+
+
+
+
+  <script>
+    // ... الكود السابق
+
+    // عند الضغط على زر "تسجيل الخروج"
+    const logoutButton = document.getElementById('logoutButton');
+    logoutButton.addEventListener('click', () => {
+      // قم بمسح بيانات المستخدم من التخزين المحلي
+      localStorage.removeItem('userData');
+
+      // توجيه المستخدم إلى صفحة تسجيل الخروج (مثلاً الصفحة الرئيسية)
+      window.location.href = '../books/book1.html'; // قم بتغيير اسم الصفحة حسب الحاجة
+    });
+  </script>
+</body>
+
+</html>
